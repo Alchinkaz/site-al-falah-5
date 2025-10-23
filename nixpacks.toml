@@ -1,0 +1,10 @@
+[phases.install]
+cmds = [
+  "pnpm config set registry https://registry.npmmirror.com",
+  "pnpm install --no-frozen-lockfile"
+]
+
+[variables]
+NEXT_PUBLIC_SUPABASE_URL = "https://rgqrysszglihhlrblcdo.supabase.co"
+NEXT_PUBLIC_SUPABASE_ANON_KEY = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InJncXJ5c3N6Z2xpaGhscmJsY2RvIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NjA2MTYzMzgsImV4cCI6MjA3NjE5MjMzOH0.IBk4gFdrwWsRjJenh3cMnpmeFGarKB6HA-XLdqriAOw"
+SUPABASE_SERVICE_ROLE_KEY = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InJncXJ5c3N6Z2xpaGhscmJsY2RvIiwicm9sZSI6InNlcnZpY2Vfcm9sZSIsImlhdCI6MTc2MDYxNjMzOCwiZXhwIjoyMDc2MTkyMzM4fQ.5Dw9OPr7cj8BIZ_UBPrm4DWyV6Uqk_fXzSZO4IUpQL0"
