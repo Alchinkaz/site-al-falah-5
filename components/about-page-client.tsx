@@ -275,7 +275,7 @@ export default function AboutPageClient({
             </div>
             {/* Button removed per request */}
           </div>
-          <div className="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-3 gap-8">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             {displayTeamMembers.map((member) => (
               <div key={member.slug} className="lg:col-span-1">
                 <div className="rounded-xl overflow-hidden border border-gray-200 bg-white">
