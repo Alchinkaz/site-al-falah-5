@@ -155,7 +155,7 @@ export default function AboutPageClient({
       {/* Top hero image block within site max-width, with slightly reduced top spacing and height */}
       <section className="bg-transparent mt-8 sm:mt-10 lg:mt-12 xl:mt-14">
         <div className="max-w-[22rem] sm:max-w-md md:max-w-3xl lg:max-w-5xl xl:max-w-7xl mx-auto px-2 sm:px-6 lg:px-8 xl:px-10 2xl:px-12">
-          <div className="relative w-full rounded-2xl overflow-hidden mb-4" style={{ aspectRatio: "21/9" }}>
+          <div className="relative w-full rounded-2xl overflow-hidden mb-4 aspect-[21/9] lg:aspect-[24/9]">
             <Image
               src={homepageData?.aboutImage || "/placeholder.svg"}
               alt="About cover"
@@ -204,7 +204,7 @@ export default function AboutPageClient({
               </div>
 
               <div>
-                <h3 className="text-2xl font-semibold text-gray-900 mb-4">
+                <h3 className="sr-only">
                   {t.aboutPageSectorsTitle?.[lang] || aboutI18n.sectorsTitle[lang]}
                 </h3>
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
