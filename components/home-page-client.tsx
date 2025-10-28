@@ -421,7 +421,7 @@ export default function HomePageClient({
               </div>
 
               <div className="order-1 xl:order-2">
-                <div className="relative w-full rounded-lg overflow-hidden" style={{ aspectRatio: "16/9" }}>
+              <div className="relative w-full rounded-lg overflow-hidden border border-gray-200" style={{ aspectRatio: "16/9" }}>
                   <Image
                     src={homepageData.aboutImage || "/placeholder.svg"}
                     alt="Currency exchange office"
