@@ -121,49 +121,51 @@ export default function PortfolioPageClient({
               <div className="hidden lg:block">
                 <div className="grid grid-cols-1 lg:grid-cols-3 gap-6 mb-12">
                   {projectsData.map((item, index) => (
-                    <div key={item.id} className="lg:col-span-1 group">
-                      <Link href={`/portfolio/${item.slug}`} className="block">
-                        <div className="bg-gray-100 rounded-xl overflow-hidden border border-gray-200 h-52">
-                          <Image
-                            src={item.image || "/placeholder.svg"}
-                            alt={item.title}
-                            width={600}
-                            height={400}
-                            loading="lazy"
-                            quality={75}
-                            sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 33vw"
-                            className="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-300"
-                          />
-                        </div>
-                      </Link>
-                      <div className="mt-4 flex flex-col h-40">
-                        <div className="flex gap-2 mb-3 flex-wrap">
-                          {(item.badges || []).map((b: any, i: number) => {
-                            const badgeTranslation = projectTranslations[item.id]?.badges?.[i]?.[lang]
-                            return (
-                              <span
-                                key={i}
-                                className="text-sm px-3 py-1 rounded-full"
-                                style={{
-                                  backgroundColor: `${b.color}20`,
-                                  color: b.color,
-                                  border: `1px solid ${b.color}40`,
-                                }}
-                              >
-                                {badgeTranslation || b.label}
-                              </span>
-                            )
-                          })}
-                        </div>
-                        <h3 className="text-black font-semibold text-2xl mb-2 leading-tight line-clamp-2 overflow-hidden flex-grow">
-                          <Link
-                            href={`/portfolio/${item.slug}`}
-                            className="hover:text-blue-600 transition-colors block line-clamp-2 overflow-hidden"
-                          >
-                            {projectTranslations[item.id]?.title[lang] || item.title}
+                    <div key={item.id} className="lg:col-span-1">
+                      <div className="rounded-xl overflow-hidden border border-gray-200 bg-white group">
+                        <div className="relative w-full h-52 bg-gray-100">
+                          <Link href={`/portfolio/${item.slug}`} className="block h-full">
+                            <Image
+                              src={item.image || "/placeholder.svg"}
+                              alt={item.title}
+                              width={600}
+                              height={400}
+                              loading="lazy"
+                              quality={75}
+                              sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 33vw"
+                              className="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-300"
+                            />
                           </Link>
-                        </h3>
-                        <p className="text-gray-500 text-sm mt-0.5 md:mt-auto">{formatDateByLang(item.date, lang)}</p>
+                        </div>
+                        <div className="bg-white px-4 py-3 border-t border-gray-200">
+                          <div className="flex gap-2 mb-2 flex-wrap">
+                            {(item.badges || []).map((b: any, i: number) => {
+                              const badgeTranslation = projectTranslations[item.id]?.badges?.[i]?.[lang]
+                              return (
+                                <span
+                                  key={i}
+                                  className="text-xs px-2 py-0.5 rounded-full"
+                                  style={{
+                                    backgroundColor: `${b.color}20`,
+                                    color: b.color,
+                                    border: `1px solid ${b.color}40`,
+                                  }}
+                                >
+                                  {badgeTranslation || b.label}
+                                </span>
+                              )
+                            })}
+                          </div>
+                          <h3 className="text-black font-semibold text-xl leading-tight mb-1 whitespace-nowrap overflow-hidden text-ellipsis">
+                            <Link
+                              href={`/portfolio/${item.slug}`}
+                              className="hover:text-blue-600 transition-colors block whitespace-nowrap overflow-hidden text-ellipsis"
+                            >
+                              {projectTranslations[item.id]?.title[lang] || item.title}
+                            </Link>
+                          </h3>
+                          <p className="text-gray-500 text-xs">{formatDateByLang(item.date, lang)}</p>
+                        </div>
                       </div>
                     </div>
                   ))}
@@ -174,49 +176,51 @@ export default function PortfolioPageClient({
               <div className="hidden md:block lg:hidden">
                 <div className="grid grid-cols-2 gap-6 mb-12">
                   {projectsData.map((item) => (
-                    <div key={item.id} className="aspect-[16/9] group">
-                      <Link href={`/portfolio/${item.slug}`} className="block h-full">
-                        <div className="bg-gray-100 rounded-xl overflow-hidden border border-gray-200 h-full">
-                          <Image
-                            src={item.image || "/placeholder.svg"}
-                            alt={item.title}
-                            width={600}
-                            height={400}
-                            loading="lazy"
-                            quality={75}
-                            sizes="(max-width: 768px) 100vw, 50vw"
-                            className="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-300"
-                          />
-                        </div>
-                      </Link>
-                      <div className="mt-3 flex flex-col h-36">
-                        <div className="flex gap-2 mb-2 flex-wrap">
-                          {(item.badges || []).map((b: any, i: number) => {
-                            const badgeTranslation = projectTranslations[item.id]?.badges?.[i]?.[lang]
-                            return (
-                              <span
-                                key={i}
-                                className="text-sm px-2 py-1 rounded-full"
-                                style={{
-                                  backgroundColor: `${b.color}20`,
-                                  color: b.color,
-                                  border: `1px solid ${b.color}40`,
-                                }}
-                              >
-                                {badgeTranslation || b.label}
-                              </span>
-                            )
-                          })}
-                        </div>
-                        <h3 className="text-black font-semibold text-2xl md:text-2xl mb-1 leading-tight line-clamp-2 overflow-hidden flex-grow">
-                          <Link
-                            href={`/portfolio/${item.slug}`}
-                            className="hover:text-blue-600 transition-colors block line-clamp-2 overflow-hidden"
-                          >
-                            {projectTranslations[item.id]?.title[lang] || item.title}
+                    <div key={item.id}>
+                      <div className="rounded-xl overflow-hidden border border-gray-200 bg-white group">
+                        <div className="relative w-full aspect-[16/9] bg-gray-100">
+                          <Link href={`/portfolio/${item.slug}`} className="block h-full">
+                            <Image
+                              src={item.image || "/placeholder.svg"}
+                              alt={item.title}
+                              width={600}
+                              height={400}
+                              loading="lazy"
+                              quality={75}
+                              sizes="(max-width: 768px) 100vw, 50vw"
+                              className="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-300"
+                            />
                           </Link>
-                        </h3>
-                        <p className="text-gray-500 text-xs mt-0.5 md:mt-auto">{formatDateByLang(item.date, lang)}</p>
+                        </div>
+                        <div className="bg-white px-3 py-3 border-t border-gray-200">
+                          <div className="flex gap-2 mb-2 flex-wrap">
+                            {(item.badges || []).map((b: any, i: number) => {
+                              const badgeTranslation = projectTranslations[item.id]?.badges?.[i]?.[lang]
+                              return (
+                                <span
+                                  key={i}
+                                  className="text-xs px-2 py-0.5 rounded-full"
+                                  style={{
+                                    backgroundColor: `${b.color}20`,
+                                    color: b.color,
+                                    border: `1px solid ${b.color}40`,
+                                  }}
+                                >
+                                  {badgeTranslation || b.label}
+                                </span>
+                              )
+                            })}
+                          </div>
+                          <h3 className="text-black font-semibold text-lg mb-1 leading-tight whitespace-nowrap overflow-hidden text-ellipsis">
+                            <Link
+                              href={`/portfolio/${item.slug}`}
+                              className="hover:text-blue-600 transition-colors block whitespace-nowrap overflow-hidden text-ellipsis"
+                            >
+                              {projectTranslations[item.id]?.title[lang] || item.title}
+                            </Link>
+                          </h3>
+                          <p className="text-gray-500 text-xs">{formatDateByLang(item.date, lang)}</p>
+                        </div>
                       </div>
                     </div>
                   ))}
@@ -227,49 +231,51 @@ export default function PortfolioPageClient({
               <div className="md:hidden mb-12">
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
                   {projectsData.map((item) => (
-                    <div key={item.id} className="aspect-[16/9] group">
-                      <Link href={`/portfolio/${item.slug}`} className="block h-full">
-                        <div className="bg-gray-100 rounded-xl overflow-hidden border border-gray-200 h-full">
-                          <Image
-                            src={item.image || "/placeholder.svg"}
-                            alt={item.title}
-                            width={600}
-                            height={400}
-                            loading="lazy"
-                            quality={75}
-                            sizes="(max-width: 640px) 100vw, 50vw"
-                            className="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-300"
-                          />
-                        </div>
-                      </Link>
-                      <div className="mt-3 flex flex-col h-36">
-                        <div className="flex gap-2 mb-2 flex-wrap">
-                          {(item.badges || []).map((b: any, i: number) => {
-                            const badgeTranslation = projectTranslations[item.id]?.badges?.[i]?.[lang]
-                            return (
-                              <span
-                                key={i}
-                                className="text-sm px-2 py-1 rounded-full"
-                                style={{
-                                  backgroundColor: `${b.color}20`,
-                                  color: b.color,
-                                  border: `1px solid ${b.color}40`,
-                                }}
-                              >
-                                {badgeTranslation || b.label}
-                              </span>
-                            )
-                          })}
-                        </div>
-                        <h3 className="text-black font-semibold text-2xl md:text-2xl mb-1 leading-tight line-clamp-2 overflow-hidden flex-grow">
-                          <Link
-                            href={`/portfolio/${item.slug}`}
-                            className="hover:text-blue-600 transition-colors block line-clamp-2 overflow-hidden"
-                          >
-                            {projectTranslations[item.id]?.title[lang] || item.title}
+                    <div key={item.id}>
+                      <div className="rounded-xl overflow-hidden border border-gray-200 bg-white group">
+                        <div className="relative w-full aspect-[16/9] bg-gray-100">
+                          <Link href={`/portfolio/${item.slug}`} className="block h-full">
+                            <Image
+                              src={item.image || "/placeholder.svg"}
+                              alt={item.title}
+                              width={600}
+                              height={400}
+                              loading="lazy"
+                              quality={75}
+                              sizes="(max-width: 640px) 100vw, 50vw"
+                              className="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-300"
+                            />
                           </Link>
-                        </h3>
-                        <p className="text-gray-500 text-xs mt-0.5 md:mt-auto">{formatDateByLang(item.date, lang)}</p>
+                        </div>
+                        <div className="bg-white px-3 py-3 border-t border-gray-200">
+                          <div className="flex gap-2 mb-2 flex-wrap">
+                            {(item.badges || []).map((b: any, i: number) => {
+                              const badgeTranslation = projectTranslations[item.id]?.badges?.[i]?.[lang]
+                              return (
+                                <span
+                                  key={i}
+                                  className="text-xs px-2 py-0.5 rounded-full"
+                                  style={{
+                                    backgroundColor: `${b.color}20`,
+                                    color: b.color,
+                                    border: `1px solid ${b.color}40`,
+                                  }}
+                                >
+                                  {badgeTranslation || b.label}
+                                </span>
+                              )
+                            })}
+                          </div>
+                          <h3 className="text-black font-semibold text-lg mb-1 leading-tight whitespace-nowrap overflow-hidden text-ellipsis">
+                            <Link
+                              href={`/portfolio/${item.slug}`}
+                              className="hover:text-blue-600 transition-colors block whitespace-nowrap overflow-hidden text-ellipsis"
+                            >
+                              {projectTranslations[item.id]?.title[lang] || item.title}
+                            </Link>
+                          </h3>
+                          <p className="text-gray-500 text-xs">{formatDateByLang(item.date, lang)}</p>
+                        </div>
                       </div>
                     </div>
                   ))}
