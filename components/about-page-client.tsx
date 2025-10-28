@@ -155,7 +155,7 @@ export default function AboutPageClient({
       {/* Top hero image block within site max-width, with slightly reduced top spacing and height */}
       <section className="bg-transparent mt-8 sm:mt-10 lg:mt-12 xl:mt-14">
         <div className="max-w-[22rem] sm:max-w-md md:max-w-3xl lg:max-w-5xl xl:max-w-7xl mx-auto px-2 sm:px-6 lg:px-8 xl:px-10 2xl:px-12">
-          <div className="relative w-full rounded-2xl overflow-hidden mb-4 aspect-[21/9] lg:aspect-[24/9]">
+          <div className="relative w-full rounded-2xl overflow-hidden mb-2 lg:mb-4 aspect-[21/9] lg:aspect-[24/9]">
             <Image
               src={homepageData?.aboutImage || "/placeholder.svg"}
               alt="About cover"
@@ -173,7 +173,7 @@ export default function AboutPageClient({
       {/* Removed hero heading & subtitle per request */}
 
       {/* Company Intro */}
-      <section className="pt-6 md:pt-6 lg:pt-8 pb-12 bg-transparent">
+      <section className="pt-4 md:pt-4 lg:pt-8 pb-12 bg-transparent">
         <div className="max-w-[22rem] sm:max-w-md md:max-w-3xl lg:max-w-5xl xl:max-w-7xl mx-auto px-2 sm:px-6 lg:px-8 xl:px-10 2xl:px-12">
           <div className="grid xl:grid-cols-2 gap-12">
             <div className="space-y-5 text-gray-700 text-lg leading-relaxed">
