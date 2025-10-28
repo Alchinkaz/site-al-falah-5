@@ -229,7 +229,7 @@ export default function HomePageClient({
         }}
       >
         {/* Portfolio Section */}
-        <section className="relative pt-24 pb-8" id="portfolio">
+        <section className="relative pt-24 pb-4" id="portfolio">
           <div className="max-w-[22rem] sm:max-w-md md:max-w-3xl lg:max-w-5xl xl:max-w-7xl mx-auto px-2 sm:px-6 lg:px-8 xl:px-10 2xl:px-12">
             <div className="mb-12 flex flex-col md:flex-row md:items-end md:justify-between lg:flex-row lg:items-end lg:justify-between">
               <div className="text-center md:text-left">
@@ -405,7 +405,7 @@ export default function HomePageClient({
         </section>
 
         {/* About Section with company info and statistics */}
-        <section id="about" className="relative py-12 pb-24" aria-labelledby="about-heading">
+        <section id="about" className="relative pt-8 pb-24" aria-labelledby="about-heading">
           <div className="max-w-[22rem] sm:max-w-md md:max-w-3xl lg:max-w-5xl xl:max-w-7xl mx-auto px-2 sm:px-6 lg:px-8 xl:px-10 2xl:px-12">
             <div className="grid xl:grid-cols-2 gap-16 items-start mb-16">
               <div className="order-2 xl:order-1">
